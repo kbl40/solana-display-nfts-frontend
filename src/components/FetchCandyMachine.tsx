@@ -86,6 +86,21 @@ export const FetchCandyMachine: FC = () => {
         </div>
       )}
 
+      {candyMachineData && (
+        <div className="flex flex-col items-center justify-center p-5">
+          <ul>Candy Machine Program Address: {candyMachineData.programAddress.toString()}</ul>
+          <ul>Authority Address: {candyMachineData.authorityAddress.toString()}</ul>
+          <ul>Token Address: 
+            {
+              candyMachineData.tokenMintAddress ? candyMachineData.tokenMintAddress
+              : " none"
+            }
+          </ul>
+          <ul>Seller Royalty: {candyMachineData.sellerFeeBasisPoints / 100}%</ul>
+          <ul>NFTs Minted: {candyMachineData.itemsMinted.toString()}</ul>
+          <ul>NFTs Available: {candyMachineData.itemsRemaining.toString()}</ul>
+        </div>
+      )}
       {pageItems && (
         <div>
           <div className={styles.gridNFT}>

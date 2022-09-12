@@ -45,6 +45,7 @@ export const FetchNft: FC = () => {
               nftData.map((nft) => (
                 <div>
                   <ul>{nft.name}</ul>
+                  <ul>{nft.symbol}</ul>
                   <img src={nft.image} />
                   <ul>
                     {
